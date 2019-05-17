@@ -15,7 +15,8 @@ class Smurfs extends Component {
     render() {
         return(
             <div>
-                <div>Smurfs List</div>
+                {this.props.fetching ? <h1 className = 'fullAlert'>The Smurfs are on the move.....</h1> :null }
+                {this.props.error !== null ? <h1 className = 'fullAlert'>{this.props.error}</h1> :null }
                 <Smurf />
             </div>
         );
