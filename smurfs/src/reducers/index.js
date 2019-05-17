@@ -46,6 +46,7 @@ export default ( state = initialState, action ) => {
       })
 
     case CREATING:
+      return Object.assign( {}, state, {adding: true} );
 
     case DELETING:
 

@@ -24,7 +24,7 @@ export const ERROR = 'ERROR';
 // get the data from api
 export const getSmurfs = () => {
   return (dispatch) => {
-    dispatch( {type: FETCHING } )
+    dispatch( {type: FETCHING } );
     axios
       .get('http://localhost:3333/smurfs')
       .then( (response) => {
@@ -37,7 +37,19 @@ export const getSmurfs = () => {
 };
 
 //post to add new smurf
-export const addSmurf = () => {};
+export const addSmurf = (smurf) => {
+  return (dispatch) => {
+    dispatch({type: CREATING } );
+    axios
+      .post('http://localhost:3333/smurfs', smurf )
+      .then((response) => {
+        dispatch({type: UPDATING, smurfs: response.data});
+      })
+      .catch((err) => {
+        dispatch({type: ERROR, errMsg: "Azrael caught the Smurf! Try again."})
+      });
+  };
+};
 
 //stretch edit smurfs
 export const editSmurf = () => {};
