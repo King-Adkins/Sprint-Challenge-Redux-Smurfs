@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Smurfs from './Smurfs';
+import AddSmurf from './AddSmurf';
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -13,6 +14,7 @@ const App = () => {
         <h1>SMURFS! 2.0 W/ Redux</h1>
         <div>Welcome to your Redux version of Smurfs!</div>
         <Smurfs />
+        <AddSmurf />
       </div>
     );
   }
