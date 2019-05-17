@@ -1,8 +1,13 @@
+import axios from 'axios';
 /* 
   Action Types Go Here!
   Be sure to export each action type so you can pull it into your reducer
 */
-
+export const FETCHING = 'FETCHING';
+export const UPDATING = 'UPDATING';
+export const CREATING = 'CREATING';
+export const DELETING = 'DELETING';
+export const ERROR = 'ERROR';
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
@@ -13,3 +18,17 @@
    U - updateSmurf
    D - deleteSmurf
 */
+
+//Writing empty functions just to have them defined
+
+// get the data from api
+export const getSmurfs = () => {};
+
+//post to add new smurf
+export const addSmurf = () => {};
+
+//stretch edit smurfs
+export const editSmurf = () => {};
+
+//stretch delete
+export const deleteSmurf = () => {};
