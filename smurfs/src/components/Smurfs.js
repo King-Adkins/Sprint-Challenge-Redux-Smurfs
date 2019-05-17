@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getSmurfs } from '../actions';
 import Smurf from './Smurf';
 
 class Smurfs extends Component {
@@ -7,7 +8,9 @@ class Smurfs extends Component {
         super(props);
     };
 
-    componentDidMount() {};
+    componentDidMount() {
+        this.props.getSmurfs();
+    };
 
     render() {
         return(
@@ -19,7 +22,14 @@ class Smurfs extends Component {
     };
 };
 
-const mapStateToProps = (state) => {};
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs,
+        fetching: state.fetching,
+        error: state.error
+    }
+};
 
 
-export default connect(mapStateToProps, {})(Smurfs);
+export default connect(mapStateToProps, { getSmurfs })
+(Smurfs);
